@@ -1,10 +1,33 @@
 /**
- * MicroVGA controller for DCPU project
+ * @file microvga.h
+ * @brief MicroVGA controller for DCPU project
+ * @author SkyWodd
+ * @version 1.0
+ * @see http://skyduino.wordpress.com/
  *
- * @author Skywodd
- * @link http://skyduino.wordpress.com
+ * @section intro_sec Introduction
+ * This controller is designed to handle communiactions with MicroVGA display board.\n
+ * \n
+ * Please report bug to <skywodd at gmail.com>
+ *
+ * @section licence_sec Licence
+ *  This program is free software: you can redistribute it and/or modify\n
+ *  it under the terms of the GNU General Public License as published by\n
+ *  the Free Software Foundation, either version 3 of the License, or\n
+ *  (at your option) any later version.\n
+ * \n
+ *  This program is distributed in the hope that it will be useful,\n
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of\n
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n
+ *  GNU General Public License for more details.\n
+ * \n
+ *  You should have received a copy of the GNU General Public License\n
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.\n
+ *
+ * @section changelog_sec Changelog history
+ * - 21/07/2012 : First version
  */
- 
+
 #ifndef _MICROVGA_H_
 #define _MICROVGA_H_
 
@@ -103,14 +126,14 @@ void microvga_set_attribute(microvga_attribute attribute);
 /**
  * Set foreground text color
  *
- * @param color Color to set
+ * @param color Color of foreground text
  */
 void microvga_set_foreground_color(microvga_color color);
 
 /**
  * Set background text color
  *
- * @param color Color to set
+ * @param color Color of background text
  */
 void microvga_set_background_color(microvga_color color);
 
@@ -127,6 +150,7 @@ void microvga_clear_screen(void);
 /**
  * Move cursor to (x, y) position
  *
+ * @note XY positions start at index 0
  * @param x X position (collumn)
  * @param y Y position (row)
  */
@@ -167,6 +191,8 @@ void keyboard_flag_set(void);
 
 /**
  * Get the state of RTS flow control
+ *
+ * @return The state or RTS line
  */
 uint8_t microvga_ready(void);
 
